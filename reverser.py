@@ -3,11 +3,11 @@
 import os.path
 import sys
 
-path = raw_input('What is the path to the file?')
+path = str(sys.argv[1])
 
 if os.path.isfile(path) == False:
 	sys.stderr.write('ERROR: File doesent exist \n')
-	sys.exit()
+	sys.exit(73)
 
 f = open(path, 'r')
 file_forward = f.read()
