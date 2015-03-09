@@ -6,3 +6,9 @@ Create a script called "reverser.py" that:
 * prints each line of the file in reverse order to STDOUT
 * will print "ERROR: No such file" to STDERR if the file does not exist
   or if no argument is provided
+
+** Update:
+
+* update the script to accept the path to the file as the first argument
+  passed on the command line
+* update the script to exit with a value of "72" if the file does not exist
