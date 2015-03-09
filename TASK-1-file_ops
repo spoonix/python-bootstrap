@@ -1,0 +1,8 @@
+Create a script called "reverser.py" that:
+
+* accepts the path to a file as the first argument
+* will open the file and print each line it to STDOUT
+* prints a blank line
+* prints each line of the file in reverse order to STDOUT
+* will print "ERROR: No such file" to STDERR if the file does not exist
+  or if no argument is provided
