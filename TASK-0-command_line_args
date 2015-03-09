@@ -1,0 +1,8 @@
+Tasks:
+
+1. Create a script called "hello.py" that:
+  * prints "hello world" when executed
+
+2. Create a script called "hello2.py" that:
+  * will accept an argument when executed and reply with "hello, <arg>"
+  * if no argument is provided, print "hello, stranger"
