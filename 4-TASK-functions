@@ -1,0 +1,8 @@
+Create a function called "medianate" that accepts a list of integers and
+ returns a list of floating point numbers consisting of the initial integer
+ converted to a float and having 0.5 added to it
+
+Create a function "lensort" that will accept a list of strings and will return
+ a new list consisting of the strings sorted by ascending order of length.  You 
+ may *NOT* use the sort() function to sort the strings.
+

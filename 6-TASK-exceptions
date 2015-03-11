@@ -1,0 +1,30 @@
+Create a program called "rev2.py" that:
+
+* accepts a command line argument that specifies a file to read
+* prints the contents of the file in reverse order (byte by byte, not just by
+ line)
+* will exit with error code 1 if the specified file does not exist
+* will exit with error code 2 if permission is denied to read the file
+* will exit with error code 4 if the specified path is not a file
+
+Example:
+
+cat <<EOF>/tmp/foo.txt
+Today is the day and
+now is
+the
+time.
+EOF
+
+./rev2.py /tmp/foo.txt
+.emit
+eht
+si won
+dna yad eht si yadoT
+
+echo $?                              # prints out 0
+
+./rev2.py && echo $?                 # prints 1
+./rev2.py /tmp/nofile && echo $?     # prints 1
+./rev2.py /root/.bashrc && echo $?   # prints 2 if run as normal user
+./rev2.py /lib && echo $?            # prints 4

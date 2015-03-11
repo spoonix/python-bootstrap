@@ -1,0 +1,17 @@
+Create a class called "EtcHosts" that has the following member:
+
+- entries - a dict using the IP address as the key with a value that is a list
+   of hostnames and aliases associated with the IP
+
+And methods:
+- count() - prints a count of all entries
+- find_hostnames(ip) - prints all hostnames associated with the IP address..
+   if no address is found, print "none"
+- find_ip(hostname) - prints out the IP address associated with the hostname..
+   if no hostname is found, print "none"
+- add_entry(ip, [hostnames]) - adds an entry for the IP address using the list
+   of hostnames provided.  If the hostnames list is empty, print "Error:
+   invalid hostname"
+- save(filename) - prints all the entries to filename specified
+- load(filename) - attempts to read in all the entries from the specified
+  filename, and if no filename is supplied read from /etc/hosts
