@@ -1,1 +1,26 @@
-nothing yet
+Using the text of Moby Dick from:
+
+http://www.gutenberg.org/cache/epub/2701/pg2701.txt
+
+Write a program that prints out:
+
+- the number of sentences in that start with the uppercase letter 'C'
+- the number of lines that start with the uppercase letter 'C'
+
+Punctuation should not count as a character in the string.
+
+Example:
+
+Circumambulate the city of a dreamy Sabbath afternoon. Go from Corlears
+
+  This is +1 for both start C and sentence C
+
+nor, though I am something of a salt, do I ever go to sea as a
+Commodore, or a Captain, or a Cook. I abandon the glory and distinction
+
+  This is +1 for both start C, but not sentence
+
+Hook to Coenties Slip, and from thence, by Whitehall, northward. What
+
+  This line should be skipped in the count.
+
