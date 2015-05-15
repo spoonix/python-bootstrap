@@ -1,38 +1,42 @@
 #!/usr/bin/python
 import re
 
-def sent_counter(line):
-    sent_regex = '.*[\\.\\?\\"\\!] C.*'
-    sent_result = re.match(sent_regex, line)
+def sentence_verify(line):
+    sent_regex = re.compile('\w+[\.\?\!]+\W+$')
+    sent_result = sent_regex.search(line)
     if sent_result != None:
         return True
 
-def sent2_counter(line):
-    sent2_regex = '.*[\\.\\?\\"\\!]'
-    sent2_result = re.match(sent2_regex, line)
-    if sent2_result != None:
+def sentence_counter(line):
+    sent_regex = re.compile('\w+[\.\?\!]+\W+C')
+    sent_result = sent_regex.search(line)
+    if sent_result != None:
         return True
 
 def line_counter(line):
-    line_regex = "C.*"
-    line_result = re.match(line_regex, line)
-    if line_result != None:
+    sent_regex = re.compile('^C')
+    sent_result = sent_regex.search(line)
+    if sent_result != None:
         return True
 
-line_count=0
-sent_count=0
+sent_c = 0
+line_c = 0
 
 with open("pg2701.txt") as file:
     for line in file:
 
+        if sentence_counter(line):
+            sent_c += 1
+
         if line_counter(line):
-            line_count += 1
-            if sent2_counter(line):
-                sent_count += 1
+            line_c += 1
+            if sentence_verify(line):
+                sent_c += 1
 
-        if sent_counter(line):
-            sent_count += 1
+        if sentence_verify(line):
+            sent_ver = True
+        else:
+            sent_ver = False
 
-
-    print 'line C: ' + str(line_count)
-    print 'sentence C: ' + str(sent_count)
+print 'Sentence C: ' + str(sent_c)
+print 'Line C: ' + str(line_c)
